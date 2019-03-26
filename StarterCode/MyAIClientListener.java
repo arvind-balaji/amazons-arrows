@@ -1,0 +1,25 @@
+import netgame.client.Client;
+
+public class MyAIClientListener extends AIClientListener
+{
+
+ public MyAIClientListener() {
+  super("Unnamed AI");
+ }
+ 
+ @Override
+ public void yourTurn(AmazonsRules rules, Client<AmazonsState, AmazonsRules> client) 
+ {
+  
+ }
+
+ @Override
+ public void gameover(String reason) 
+ {
+  
+ }
+}
+
+
+
+

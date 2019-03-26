@@ -1,0 +1,41 @@
+Rules:
+void move(int fromX, int fromY, int toX, int toY, int arrowX, int arrowY)
+boolean canMove(int fromX, int fromY, int toX, int toY)
+boolean canMove(int fromX, int fromY, int toX, int toY, int arrowX, int arrowY)
+boolean isTurnHolder(int playerId)
+void setNextTurnHolder()
+void setName(int playerId, String name)
+void setWinner(int playerId)
+void reset()
+boolean checkPath(int fromX, int fromY, int toX, int toY)
+boolean isQueenMove(int fromX, int fromY, int toX, int toY)
+boolean hasLegalMoves(int playerNumber)
+AmazonsState getState()
+
+State:
+void reset()
+boolean isGameOver()
+void addPlayer(int playerId, int playerNumber)
+int getPlayerId(int playerNumber)
+int getPlayerNumber(int playerId)
+void setPlayerName(int playerId, String name)
+int getOtherPlayerId(int playerId)
+String getPlayerName(int playerNumber)
+int getObjectAt(int x, int y)
+int setObjectAt(int x, int y, int value)
+int getTurnHolder()
+void setTurnHolder(int playerNumber)
+int getWinner()
+void setWinner(int playerNumber)
+Point[] getPieces(int playerNumber)
+AmazonsState getCopy()
+
+Client:
+send(String msg)
+
+AIClientListener:
+void yourTurn(AmazonsRules rules, Client<AmazonsState, AmazonsRules> client)
+void gameover(String reason) 
+
+Note:
+to use Point you must import java.awt.Point
