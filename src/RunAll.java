@@ -9,7 +9,7 @@ public class RunAll {
     AmazonsClient clientB = new AmazonsClient();
 
     clientA.registerListener(new MyAIClientListener("MyAI"));
-//  clientA.registerListener(new GUIListener());
+    clientA.registerListener(new GUIListener());
 
     clientB.registerListener(new RandomAIClientListener("Random"));
 

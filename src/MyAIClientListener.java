@@ -1,6 +1,5 @@
 import java.util.*;
 import java.awt.Point;
-import java.util.stream.*;
 
 
 import netgame.client.Client;
@@ -13,22 +12,20 @@ public class MyAIClientListener extends AIClientListener {
 
   @Override
   public void yourTurn(AmazonsRules rules, Client<AmazonsState, AmazonsRules> client) {
-    List<int[]> moves = getMoves(rules, this.getMyPlayerNumber());
+    PotentialMoves potentialMoves = new PotentialMoves(getMoves(rules, this.getMyPlayerNumber()));
 
-    Map scoredMoves = new LinkedHashMap();
-
-    for (int[] move : moves) {
+    for (Move move : potentialMoves.getMoves()) {
       AmazonsRules newRules = rules.getCopy();
-      newRules.move(move[0], move[1], move[2], move[3], move[4], move[5]);
-      scoredMoves.put(move, scoreState(newRules));
+      newRules.move(move.fromX, move.fromY, move.toX, move.toY, move.shootX, move.shootY);
+      move.addScore(moveCountScore(newRules));
+      move.addScore(arrowProximityScore(rules, move));
+      move.addScore(playerProximityScore(rules, move));
     }
-    Optional<Map.Entry<int[], Integer>> bestMove =
-            scoredMoves.entrySet()
-                    .stream()
-                    .sorted(Collections.reverseOrder(Map.Entry.comparingByValue()))
-                    .findFirst();
-    int[] myMove = bestMove.get().getKey();
-    client.send(C.MOVE + C.SPACE + myMove[0] + C.SPACE + myMove[1] + C.SPACE + myMove[2] + C.SPACE + myMove[3] + C.SPACE + myMove[4] + C.SPACE + myMove[5]);
+
+    potentialMoves.normalize(new double[]{1, 1, .5});
+    System.out.println(potentialMoves);
+    System.out.println(potentialMoves.getBestMove());
+    client.send(C.MOVE + C.SPACE + potentialMoves.getBestMove().getMoveString());
   }
 
   @Override
@@ -37,16 +34,55 @@ public class MyAIClientListener extends AIClientListener {
     System.out.println("gameover: " + reason);
   }
 
-  private int scoreState(AmazonsRules rules) {
-    List<int[]> myMoves = getMoves(rules, this.getMyPlayerNumber());
-    List<int[]> opponentMoves = getMoves(rules, this.getOtherPlayerNumber());
+  private int moveCountScore(AmazonsRules rules) {
+    List<Move> myMoves = getMoves(rules, this.getMyPlayerNumber());
+    List<Move> opponentMoves = getMoves(rules, this.getOtherPlayerNumber());
     return myMoves.size() - opponentMoves.size();
   }
 
+  private int arrowProximityScore(AmazonsRules rules, Move move) {
+    int score = 0;
+    for (Point piece : rules.getState().getPieces(this.getOtherPlayerNumber())) {
+      int xDiff = Math.abs(piece.x - move.shootX);
+      int yDiff = Math.abs(piece.y - move.shootY);
+      if (xDiff <= 1 && yDiff <= 1) {
+        score += 100;
+      } else {
+        score += 100 / (xDiff + yDiff);
+      }
+    }
+    for (Point piece : rules.getState().getPieces(this.getMyPlayerNumber())) {
+      int xDiff = Math.abs(piece.x - move.shootX);
+      int yDiff = Math.abs(piece.y - move.shootY);
+      if (xDiff <= 1 && yDiff <= 1) {
+        score = 0;
+      } else {
+        score += 10 * (xDiff + yDiff);
+      }
 
-  private List<int[]> getMoves(AmazonsRules rules, int player) {
+    }
+    return score;
+  }
+
+  private int playerProximityScore(AmazonsRules rules, Move move) {
+    int score = 0;
+//    for (Point piece : rules.getState().getPieces(this.getOtherPlayerNumber())) {
+//      int xDiff = Math.abs(piece.x - move.toX);
+//      int yDiff = Math.abs(piece.y - move.toY);
+//      score+=100*(xDiff+yDiff-2);
+//    }
+    for (Point piece : rules.getState().getPieces(this.getMyPlayerNumber())) {
+      int xDiff = Math.abs(piece.x - move.toX);
+      int yDiff = Math.abs(piece.y - move.toY);
+      score += 1000 / (xDiff + yDiff);
+    }
+    return score;
+  }
+
+
+  private List<Move> getMoves(AmazonsRules rules, int player) {
     AmazonsState state = rules.getState();
-    List<int[]> moves = new LinkedList<>();
+    List<Move> moves = new LinkedList<>();
 
     for (Point piece : state.getPieces(player)) {
       if (null == piece) {
@@ -55,13 +91,12 @@ public class MyAIClientListener extends AIClientListener {
       }
       int fromX = piece.x;
       int fromY = piece.y;
-
       for (int toX = 0; toX < 10; toX++) {
         for (int toY = 0; toY < 10; toY++) {
           for (int shootX = 0; shootX < 10; shootX++) {
             for (int shootY = 0; shootY < 10; shootY++) {
               if (rules.canMove(fromX, fromY, toX, toY, shootX, shootY)) {
-                moves.add(new int[]{fromX, fromY, toX, toY, shootX, shootY});
+                moves.add(new Move(fromX, fromY, toX, toY, shootX, shootY));
               }
             }
           }
