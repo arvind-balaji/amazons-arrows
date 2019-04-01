@@ -25,7 +25,7 @@ public class PotentialMoves {
     }
   }
 
-  public void normalize(double[] weights) {
+  public void normalize(double... weights) {
     for (int i = 0; i < moves.get(0).getScores().size(); i++) {
       normalizeMove(i, weights[i]);
     }

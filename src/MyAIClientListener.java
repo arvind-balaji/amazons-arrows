@@ -15,62 +15,65 @@ public class MyAIClientListener extends AIClientListener {
     PotentialMoves potentialMoves = new PotentialMoves(getMoves(rules, this.getMyPlayerNumber()));
 
     for (Move move : potentialMoves.getMoves()) {
-      AmazonsRules newRules = rules.getCopy();
-      newRules.move(move.fromX, move.fromY, move.toX, move.toY, move.shootX, move.shootY);
-      move.addScore(moveCountScore(newRules));
-      move.addScore(arrowProximityScore(rules, move));
-      move.addScore(playerProximityScore(rules, move));
+      move.addScore(moveCountScore(rules, move));
+//      move.addScore(arrowProximityScore(rules, move));
+////      move.addScore(playerProximityScore(rules, move));
+      move.addScore(playerMobilityScore(rules, move));
+      move.addScore(opponentMobilityScore(rules, move));
+
     }
 
-    potentialMoves.normalize(new double[]{1, 1, .5});
-    System.out.println(potentialMoves);
+    potentialMoves.normalize(.5, 1, 1);
+
+//    System.out.println(potentialMoves);
     System.out.println(potentialMoves.getBestMove());
     client.send(C.MOVE + C.SPACE + potentialMoves.getBestMove().getMoveString());
   }
 
   @Override
   public void gameover(String reason) {
-    System.out.println("you are: Player " + this.getMyPlayerNumber());
+//    System.out.println("you are: Player " + this.getMyPlayerNumber());
     System.out.println("gameover: " + reason);
   }
 
-  private int moveCountScore(AmazonsRules rules) {
-    List<Move> myMoves = getMoves(rules, this.getMyPlayerNumber());
-    List<Move> opponentMoves = getMoves(rules, this.getOtherPlayerNumber());
+  private int moveCountScore(AmazonsRules rules, Move move) {
+    AmazonsRules newRules = rules.getCopy();
+    newRules.move(move.fromX, move.fromY, move.toX, move.toY, move.shootX, move.shootY);
+
+    List<Move> myMoves = getMoves(newRules, this.getMyPlayerNumber());
+    List<Move> opponentMoves = getMoves(newRules, this.getOtherPlayerNumber());
+
     return myMoves.size() - opponentMoves.size();
   }
 
   private int arrowProximityScore(AmazonsRules rules, Move move) {
     int score = 0;
-    for (Point piece : rules.getState().getPieces(this.getOtherPlayerNumber())) {
-      int xDiff = Math.abs(piece.x - move.shootX);
-      int yDiff = Math.abs(piece.y - move.shootY);
-      if (xDiff <= 1 && yDiff <= 1) {
-        score += 100;
-      } else {
-        score += 100 / (xDiff + yDiff);
-      }
-    }
+//    for (Point piece : rules.getState().getPieces(this.getOtherPlayerNumber())) {
+//      int xDiff = Math.abs(piece.x - move.shootX);
+//      int yDiff = Math.abs(piece.y - move.shootY);
+////      if (xDiff <= 1 && yDiff <= 1) {
+////        score += 100;
+////      } else {
+//        score += 1000 / (xDiff + yDiff);
+////      }
+//    }
+//    System.out.print(score + " -> ");
     for (Point piece : rules.getState().getPieces(this.getMyPlayerNumber())) {
       int xDiff = Math.abs(piece.x - move.shootX);
       int yDiff = Math.abs(piece.y - move.shootY);
       if (xDiff <= 1 && yDiff <= 1) {
-        score = 0;
+        return 0;
       } else {
         score += 10 * (xDiff + yDiff);
       }
 
     }
+//    System.out.print(score + "\n");
     return score;
   }
 
   private int playerProximityScore(AmazonsRules rules, Move move) {
     int score = 0;
-//    for (Point piece : rules.getState().getPieces(this.getOtherPlayerNumber())) {
-//      int xDiff = Math.abs(piece.x - move.toX);
-//      int yDiff = Math.abs(piece.y - move.toY);
-//      score+=100*(xDiff+yDiff-2);
-//    }
     for (Point piece : rules.getState().getPieces(this.getMyPlayerNumber())) {
       int xDiff = Math.abs(piece.x - move.toX);
       int yDiff = Math.abs(piece.y - move.toY);
@@ -79,6 +82,65 @@ public class MyAIClientListener extends AIClientListener {
     return score;
   }
 
+  private int opponentMobilityScore(AmazonsRules rules, Move move) {
+    AmazonsRules rulesCopy = rules.getCopy();
+    rulesCopy.setNextTurnHolder();
+    int mobility = 0;
+    int newMobility = 0;
+
+    for (Point piece : rulesCopy.getState().getPieces(this.getOtherPlayerNumber()))
+      for (int dx = -1; dx <= 1; dx++)
+        for (int dy = -1; dy <= 1; dy++)
+          if (rulesCopy.canMove(piece.x, piece.y, piece.x + dx, piece.y + dy))
+            mobility++;
+
+    rulesCopy.move(move.fromX, move.fromY, move.toX, move.toY, move.shootX, move.shootY);
+
+    for (Point piece : rulesCopy.getState().getPieces(this.getOtherPlayerNumber()))
+      for (int dx = -1; dx <= 1; dx++)
+        for (int dy = -1; dy <= 1; dy++)
+          if (rulesCopy.canMove(piece.x, piece.y, piece.x + dx, piece.y + dy))
+            newMobility++;
+
+    if (newMobility > mobility)
+      return 0;
+    else if (newMobility == mobility)
+      return 5;
+    else
+      return (mobility - newMobility) * 10;
+  }
+
+  private int playerMobilityScore(AmazonsRules rules, Move move) {
+    AmazonsRules rulesCopy = rules.getCopy();
+
+    int mobility = 0;
+    int newMobility = 0;
+
+    for (Point piece : rulesCopy.getState().getPieces(this.getMyPlayerNumber()))
+      for (int dx = -2; dx <= 2; dx++)
+        for (int dy = -2; dy <= 2; dy++)
+          if (rulesCopy.canMove(piece.x, piece.y, piece.x + dx, piece.y + dy))
+            mobility++;
+
+    rulesCopy.move(move.fromX, move.fromY, move.toX, move.toY, move.shootX, move.shootY);
+
+    for (Point piece : rulesCopy.getState().getPieces(this.getMyPlayerNumber()))
+      for (int dx = -2; dx <= 2; dx++)
+        for (int dy = -2; dy <= 2; dy++)
+          if (rulesCopy.canMove(piece.x, piece.y, piece.x + dx, piece.y + dy))
+            newMobility++;
+
+    if (newMobility < mobility)
+      return 0;
+    else if (newMobility == mobility)
+      return 5;
+    else
+      return (newMobility - mobility) * 10;
+  }
+
+  private int randomScore() {
+    return (int) Math.random() * 10;
+  }
 
   private List<Move> getMoves(AmazonsRules rules, int player) {
     AmazonsState state = rules.getState();
@@ -105,5 +167,7 @@ public class MyAIClientListener extends AIClientListener {
     }
     return moves;
   }
+
+
 }
 

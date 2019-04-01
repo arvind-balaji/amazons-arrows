@@ -1,4 +1,4 @@
-public class RunAll {
+public class RunTest {
 
   public static void main(String[] args) {
     int port = 8082;
@@ -8,10 +8,9 @@ public class RunAll {
     AmazonsClient clientA = new AmazonsClient();
     AmazonsClient clientB = new AmazonsClient();
 
-    clientA.registerListener(new MyAIClientListener("AI A"));
-    clientA.registerListener(new GUIListener());
+    clientA.registerListener(new MyAIClientListenerB("MyAI"));
 
-    clientB.registerListener(new MyAIClientListenerB("AI B"));
+    clientB.registerListener(new RandomAIClientListener("Random"));
 
     clientA.connect(port);
     clientB.connect(port);
