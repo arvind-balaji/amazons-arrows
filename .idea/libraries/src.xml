@@ -1,9 +1,9 @@
 <component name="libraryTable">
   <library name="src">
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/src/netgame_1.1.jar!/" />
       <root url="jar://$PROJECT_DIR$/src/mayflower3.3.2.jar!/" />
-      <root url="jar://$PROJECT_DIR$/src/AmazonsAndArrows_1.2.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/AmazonsAndArrows_1.2.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/netgame_1.2.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

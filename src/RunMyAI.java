@@ -16,7 +16,7 @@ public class RunMyAI {
       System.out.println("Connecting to " + ip + " on port " + port);
 
       AmazonsClient clientA = new AmazonsClient();
-      clientA.registerListener(new MyAIClientListenerB("MyAI"));
+      clientA.registerListener(new MyAIClientListenerB("Arvind"));
       clientA.registerListener(new GUIListener());
 
       clientA.connect(ip, port);

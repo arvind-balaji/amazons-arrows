@@ -47,7 +47,7 @@ public class RandomAIClientListener extends AIClientListener {
 
   @Override
   public void gameover(String reason) {
-    System.out.println("gameover: " + reason);
+//    System.out.println("gameover: " + reason);
   }
 
 }

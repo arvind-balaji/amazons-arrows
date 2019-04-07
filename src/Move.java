@@ -23,6 +23,10 @@ public class Move implements Comparable<Move> {
     this.scores = new ArrayList<>();
   }
 
+  public void setScores(List<Integer> scores) {
+    this.scores = scores;
+  }
+
   public int getScore() {
     int total = 0;
     for (int x : this.scores) {
@@ -32,8 +36,18 @@ public class Move implements Comparable<Move> {
   }
 
   public void addScore(int score) {
-    scores.add(score);
+    this.scores.add(score);
   }
+
+  public void addScores(int... scores) {
+    for(int score : scores)
+      this.scores.add(score);
+  }
+
+  public void removeScore() {
+    scores = new ArrayList<>();
+  }
+
 
   public List<Integer> getScores() {
     return scores;
