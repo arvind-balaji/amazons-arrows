@@ -1,6 +1,8 @@
 import java.text.DecimalFormat;
 import java.util.*;
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.Callable;
+import java.util.concurrent.FutureTask;
 import java.awt.Point;
 
 
@@ -16,17 +18,28 @@ public class MyAIClientListenerB extends AIClientListener {
   @Override
   public void yourTurn(AmazonsRules rules, Client<AmazonsState, AmazonsRules> client) {
     PotentialMoves potentialMoves = new PotentialMoves(getMoves(rules, this.getMyPlayerNumber()));
-
-    for (Move move : potentialMoves.getMoves()) {
-     Heuristics heuristic = new Heuristics(rules, move, this.getMyPlayerNumber(), this.getOtherPlayerNumber());
-     MiniMax miniMax = new MiniMax(rules, move, this.getMyPlayerNumber(), this.getOtherPlayerNumber(), 0);
-     move.addScores(
-       heuristic.randomScore(),
-       miniMax.call()
-     );
+    if (potentialMoves.getMoves().size() > 500) {
+      for (Move move : potentialMoves.getMoves()) {
+        Heuristics heuristic = new Heuristics(rules, move, this.getMyPlayerNumber(), this.getOtherPlayerNumber());
+        move.addScores(
+                heuristic.oppMobility(),
+                heuristic.playerMobility(),
+                heuristic.moveCount()
+        );
+      }
+      potentialMoves.normalize(.25,1,1);
+    }else{
+      for (Move move : potentialMoves.getMoves()) {
+        Heuristics heuristic = new Heuristics(rules, move, this.getMyPlayerNumber(), this.getOtherPlayerNumber());
+        MiniMax miniMax = new MiniMax(rules, move, this.getMyPlayerNumber(), this.getOtherPlayerNumber(), 2);
+        move.addScores(
+                heuristic.randomScore(),
+                miniMax.call()
+        );
+      }
+      potentialMoves.normalize(.25,1,1);
     }
 
-    potentialMoves.normalize(.25,1,1);
 
     System.out.println(potentialMoves);
 //    System.out.println(potentialMoves.getBestMove());

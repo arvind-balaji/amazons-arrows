@@ -10,7 +10,7 @@ public class RunAll {
     clientA.registerListener(new MiniMaxAIClientListener("AI MiniMax"));
     clientA.registerListener(new GUIListener());
 
-    clientB.registerListener(new MyAIClientListener("AI A"));
+    clientB.registerListener(new RandomAIClientListener("AI A"));
 
     clientA.connect(port);
     clientB.connect(port);

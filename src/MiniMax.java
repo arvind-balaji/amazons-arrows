@@ -1,9 +1,10 @@
 import java.awt.*;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.concurrent.Callable;
 
 
-public class MiniMax{
+public class MiniMax implements Callable<Integer> {
 
   private int maxDepth;
   private int player;
@@ -24,7 +25,7 @@ public class MiniMax{
     this.rules = rules.getCopy();
   }
 
-  public int call(){
+  public Integer call(){
    return miniMax(rules, 0);
   }
 
