@@ -9,21 +9,24 @@ public class MiniMax implements Callable<Integer> {
   private int maxDepth;
   private int player;
   private int oppPlayer;
+  private Heuristic heuristic;
   AmazonsRules rules;
 
-  public MiniMax( AmazonsRules rules, Move move, int player, int oppPlayer, int maxDepth ) {
+  public MiniMax(AmazonsRules rules, Move move, Heuristic heuristic, int player, int oppPlayer, int maxDepth) {
     this.maxDepth = maxDepth;
     this.player = player;
     this.oppPlayer = oppPlayer;
+    this.heuristic = heuristic;
     this.rules = rules.getCopy();
     this.rules.move(move.fromX, move.fromY, move.toX, move.toY, move.shootX, move.shootY);
   }
-  public MiniMax( AmazonsRules rules, int player, int oppPlayer, int maxDepth ) {
-    this.maxDepth = maxDepth;
-    this.player = player;
-    this.oppPlayer = oppPlayer;
-    this.rules = rules.getCopy();
-  }
+//  public MiniMaxMobility( AmazonsRules rules, Move move, int player, int oppPlayer, int maxDepth ) {
+//    this.maxDepth = maxDepth;
+//    this.player = player;
+//    this.oppPlayer = oppPlayer;
+//    this.rules = rules.getCopy();
+//    this.rules.move(move.fromX, move.fromY, move.toX, move.toY, move.shootX, move.shootY);
+//  }
 
   public Integer call(){
    return miniMax(rules, 0);
@@ -32,8 +35,8 @@ public class MiniMax implements Callable<Integer> {
   private int miniMax(AmazonsRules state, int depth){
     state.setNextTurnHolder();
     if(depth++ == maxDepth || state.getState().isGameOver()) {
-      Heuristics heuristic = new Heuristics(state, player, oppPlayer);
-      return heuristic.oppMobility() + heuristic.playerMobility() + heuristic.moveCount();
+      heuristic.setState(state);
+      return heuristic.evaluate();
     }
     if(state.getState().getTurnHolder() == player){
       return getMax(state, depth);
@@ -71,33 +74,12 @@ public class MiniMax implements Callable<Integer> {
     }
     return (int)bestScore;
   }
-  private int score_mobility(AmazonsRules rules) {
-    AmazonsRules state = rules.getCopy();
-    state.getState().setTurnHolder(oppPlayer);
-    int score = 0;
-    int opMobility = 0;
 
-    for (Point piece : state.getState().getPieces(oppPlayer))
-      for (int dx = -1; dx <= 1; dx++)
-        for (int dy = -1; dy <= 1; dy++)
-          if (state.canMove(piece.x, piece.y, piece.x + dx, piece.y + dy))
-            opMobility++;
-
-    state.getState().setTurnHolder(player);
-    int myMobility = 0;
-    for (Point piece : state.getState().getPieces(player))
-      for (int dx = -1; dx <= 1; dx++)
-        for (int dy = -1; dy <= 1; dy++)
-          if (state.canMove(piece.x, piece.y, piece.x + dx, piece.y + dy))
-            myMobility++;
-
-    return myMobility-opMobility;
-  }
-  private java.util.List<Move> getMoves(AmazonsRules rules, int player) {
-    AmazonsState state = rules.getState();
+  private java.util.List<Move> getMoves(AmazonsRules state, int player) {
+    AmazonsState stateCopy = state.getState();
     List<Move> moves = new LinkedList<>();
 
-    for (Point piece : state.getPieces(player)) {
+    for (Point piece : stateCopy.getPieces(player)) {
       if (null == piece) {
         System.out.println("Missing piece...");
         continue;
@@ -108,7 +90,7 @@ public class MiniMax implements Callable<Integer> {
         for (int toY = 0; toY < 10; toY++) {
           for (int shootX = 0; shootX < 10; shootX++) {
             for (int shootY = 0; shootY < 10; shootY++) {
-              if (rules.canMove(fromX, fromY, toX, toY, shootX, shootY)) {
+              if (state.canMove(fromX, fromY, toX, toY, shootX, shootY)) {
                 moves.add(new Move(fromX, fromY, toX, toY, shootX, shootY));
               }
             }

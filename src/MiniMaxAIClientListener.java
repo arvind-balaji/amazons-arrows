@@ -35,7 +35,7 @@ public class MiniMaxAIClientListener extends AIClientListener {
       bestMoves.normalize();
     }
 
-    System.out.println(bestMoves);
+//    System.out.println(bestMoves);
     client.send(C.MOVE + C.SPACE + bestMoves.getBestMove().getMoveString());
   }
 
@@ -46,7 +46,7 @@ public class MiniMaxAIClientListener extends AIClientListener {
       wins++;
     }
     double winRate = ((double)wins /(double)plays)*100;
-    System.out.println(new DecimalFormat("##.##").format(winRate) + "%");
+//    System.out.println(new DecimalFormat("##.##").format(winRate) + "%");
   }
 
 

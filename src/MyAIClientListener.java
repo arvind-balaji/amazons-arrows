@@ -1,6 +1,5 @@
 import java.text.DecimalFormat;
 import java.util.*;
-import java.util.concurrent.TimeUnit;
 import java.awt.Point;
 
 
@@ -15,34 +14,42 @@ public class MyAIClientListener extends AIClientListener {
 
   @Override
   public void yourTurn(AmazonsRules rules, Client<AmazonsState, AmazonsRules> client) {
-    PotentialMoves potentialMoves = new PotentialMoves(getMoves(rules, this.getMyPlayerNumber()));
+    int player = this.getMyPlayerNumber();
+    int oppPlayer = this.getOtherPlayerNumber();
 
-    for (Move move : potentialMoves.getMoves()) {
-      Heuristics heuristic = new Heuristics(rules, move, this.getMyPlayerNumber(), this.getOtherPlayerNumber());
+    Heuristic mobilityHeuristic;
+    Heuristic moveCountHeuristic;
+    Heuristic randomHeuristic;
+
+    PotentialMoves moves = new PotentialMoves(getMoves(rules, this.getMyPlayerNumber()));
+    int size = moves.getMoves().size();
+
+    for (Move move : moves.getMoves()) {
+      randomHeuristic = new RandomHeuristic(rules, move, player, oppPlayer);
+      mobilityHeuristic = new MobilityHeuristic(rules, move, player, oppPlayer);
       move.addScores(
-              heuristic.randomScore(),
-              heuristic.oppMobility(),
-              heuristic.playerMobility(),
-              heuristic.moveCount()
+              randomHeuristic.evaluate(),
+              mobilityHeuristic.evaluate()
       );
     }
+    moves.normalize(.25, 1, 1, 1);
 
-    potentialMoves.normalize(.25,1,1,1);
 
-//    System.out.println(potentialMoves);
+//    System.out.println(bestMoves);
 //    System.out.println(potentialMoves.getBestMove());
-    client.send(C.MOVE + C.SPACE + potentialMoves.getBestMove().getMoveString());
+    client.send(C.MOVE + C.SPACE + moves.getBestMove().getMoveString());
   }
 
   @Override
   public void gameover(String reason) {
     plays++;
+
     if(Integer.parseInt(reason.split(" ")[1])==this.getMyPlayerNumber()){
       wins++;
     }
-//    double winRate = ((double)wins /(double)plays)*100;
-//    System.out.println(new DecimalFormat("##.##").format(winRate) + "%");
-//    System.out.println("Game: " + plays);
+    double winRate = ((double) wins / (double) plays) * 100;
+    System.out.println(new DecimalFormat("##.##").format(winRate) + "%");
+    System.out.println("Game: " + plays);
   }
 
 

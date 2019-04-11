@@ -10,9 +10,9 @@ public class RunTest {
       new AmazonsServer(port, count);
       AmazonsClient clientA = new AmazonsClient();
       AmazonsClient clientB = new AmazonsClient();
-      clientA.registerListener(new MyAIClientListener("AI A"));
-//      clientA.registerListener(new GUIListener());
-      clientB.registerListener(new MyAIClientListenerB("AI B"));
+    clientA.registerListener(new MiniMaxAIClientListenerB("AI B"));
+    clientA.registerListener(new GUIListener());
+    clientB.registerListener(new MiniMaxAIClientListener("AI A"));
       clientA.connect(port);
       clientB.connect(port);
 
