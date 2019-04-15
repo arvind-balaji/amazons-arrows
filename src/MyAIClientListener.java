@@ -27,13 +27,14 @@ public class MyAIClientListener extends AIClientListener {
     for (Move move : moves.getMoves()) {
       randomHeuristic = new RandomHeuristic(rules, move, player, oppPlayer);
       mobilityHeuristic = new MobilityHeuristic(rules, move, player, oppPlayer);
+      moveCountHeuristic = new MoveCountHeuristic(rules, move, player, oppPlayer);
       move.addScores(
               randomHeuristic.evaluate(),
-              mobilityHeuristic.evaluate()
+              mobilityHeuristic.evaluate(),
+              moveCountHeuristic.evaluate()
       );
     }
     moves.normalize(.25, 1, 1, 1);
-
 
 //    System.out.println(bestMoves);
 //    System.out.println(potentialMoves.getBestMove());
@@ -48,8 +49,8 @@ public class MyAIClientListener extends AIClientListener {
       wins++;
     }
     double winRate = ((double) wins / (double) plays) * 100;
-    System.out.println(new DecimalFormat("##.##").format(winRate) + "%");
-    System.out.println("Game: " + plays);
+//    System.out.println(new DecimalFormat("##.##").format(winRate) + "%");
+//    System.out.println("Game: " + plays);
   }
 
 

@@ -7,10 +7,10 @@ public class RunAll {
     AmazonsClient clientA = new AmazonsClient();
     AmazonsClient clientB = new AmazonsClient();
 
-    clientA.registerListener(new MiniMaxAIClientListenerB("AI B"));
+    clientA.registerListener(new MiniMaxAIClientListenerB("MiniMax C"));
     clientA.registerListener(new GUIListener());
 
-    clientB.registerListener(new MiniMaxAIClientListener("AI MiniMax"));
+    clientB.registerListener(new MyAIClientListener("AI A"));
 
     clientA.connect(port);
     clientB.connect(port);

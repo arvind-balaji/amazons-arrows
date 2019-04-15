@@ -1,6 +1,6 @@
 import mayflower.Mayflower;
 
-public class RunMyAI {
+public class RunMyAIB {
 
   public static void main(String[] args) {
     String ip = Mayflower.ask("IP?");
@@ -16,8 +16,8 @@ public class RunMyAI {
       System.out.println("Connecting to " + ip + " on port " + port);
 
       AmazonsClient clientA = new AmazonsClient();
-      clientA.registerListener(new MiniMaxAIClientListenerB("MiniMax B"));
-      clientA.registerListener(new GUIListener());
+      clientA.registerListener(new MiniMaxAIClientListenerC("MiniMax C"));
+//      clientA.registerListener(new GUIListener());
 
       clientA.connect(ip, port);
     } catch (Exception e) {

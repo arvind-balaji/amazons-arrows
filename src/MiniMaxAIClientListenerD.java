@@ -1,16 +1,18 @@
-import java.text.DecimalFormat;
-import java.util.*;
-import java.awt.Point;
-
-
 import netgame.client.Client;
 
-public class MiniMaxAIClientListenerB extends AIClientListener {
+import java.awt.*;
+import java.text.DecimalFormat;
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.concurrent.*;
+
+public class MiniMaxAIClientListenerD extends AIClientListener {
   static int wins = 0;
   static int plays = 0;
   private int moveCount = 0;
 
-  public MiniMaxAIClientListenerB(String name) {
+  public MiniMaxAIClientListenerD(String name) {
     super(name);
   }
 
@@ -41,43 +43,36 @@ public class MiniMaxAIClientListenerB extends AIClientListener {
 
     PotentialMoves bestMoves = new PotentialMoves(moves.getBestMoves(5));
     bestMoves.removeScores();
-    int depthA;
-    int depthB;
-    if (size < 50) {
-      depthA = 3;
-      depthB = 2;
-    } else if (size < 200) {
-      depthA = 2;
-      depthB = 1;
-    } else if (size < 500) {
-      depthA = 2;
-      depthB = 1;
-    } else {
-      depthA = 1;
-      depthB = 0;
-    }
+
     System.out.print("\n" + "Move " + moveCount + "\n");
     System.out.print("Evaluating");
+
+    ThreadPoolExecutor executor = (ThreadPoolExecutor) Executors.newFixedThreadPool(8);
+    List<Future<Integer[]>> resultList = new ArrayList<>();
+
     for (Move move : bestMoves.getMoves()) {
-      mobilityHeuristic = new MobilityHeuristicB(rules, move, player, oppPlayer);
-      moveCountHeuristic = new MoveCountHeuristic(rules, move, player, oppPlayer);
+      EvaluationThread evaluation = new EvaluationThread(rules, move, player, oppPlayer, size);
+      Future<Integer[]> score = executor.submit(evaluation);
 
-
-//      System.out.println("depth: " + depthA + ", " + depthB);
-
-      MiniMax miniMaxA = new MiniMax(rules, move, mobilityHeuristic, player, oppPlayer, depthA);
-      MiniMax miniMaxB = new MiniMax(rules, move, moveCountHeuristic, player, oppPlayer, depthB);
-      move.addScores(
-              miniMaxA.call(),
-              miniMaxB.call()
-      );
-      System.out.print("..");
+      resultList.add(score);
+    }
+    for (int i = 0; i < resultList.size(); i++) {
+      try {
+        bestMoves.getMoves().get(i).addScores(resultList.get(i).get()[0], resultList.get(i).get()[1]);
+        System.out.print(".");
+      } catch (InterruptedException | ExecutionException e) {
+        e.printStackTrace();
+      }
+    }
+    //shut down the executor service now
+    executor.shutdown();
+    while (!executor.isTerminated()) {
     }
     System.out.println();
-    System.out.println(bestMoves.getMoves());
     bestMoves.normalize(1, 1, 1);
 
 
+//    System.out.println(bestMoves);
 //    System.out.println(bestMoves.getBestMove());
     client.send(C.MOVE + C.SPACE + bestMoves.getBestMove().getMoveString());
   }
@@ -122,6 +117,44 @@ public class MiniMaxAIClientListenerB extends AIClientListener {
     return moves;
   }
 
+  class EvaluationThread implements Callable<Integer[]> {
+    private int player;
+    private int oppPlayer;
+    AmazonsRules rules;
+    Move move;
+    int size;
+
+    public EvaluationThread(AmazonsRules rules, Move move, int player, int oppPlayer, int size) {
+      this.player = player;
+      this.oppPlayer = oppPlayer;
+      this.rules = rules;
+      this.size = size;
+      this.move = move;
+    }
+
+    public Integer[] call() throws Exception {
+      int depthA;
+      int depthB;
+      if (size < 50) {
+        depthA = 3;
+        depthB = 2;
+      } else if (size < 200) {
+        depthA = 2;
+        depthB = 1;
+      } else if (size < 500) {
+        depthA = 2;
+        depthB = 1;
+      } else {
+        depthA = 1;
+        depthB = 0;
+      }
+      Heuristic mobilityHeuristic = new MobilityHeuristicB(rules, move, player, oppPlayer);
+      Heuristic moveCountHeuristic = new MoveCountHeuristic(rules, move, player, oppPlayer);
+      MiniMax miniMaxA = new MiniMax(rules, move, mobilityHeuristic, player, oppPlayer, depthA);
+      MiniMax miniMaxB = new MiniMax(rules, move, moveCountHeuristic, player, oppPlayer, depthB);
+      return new Integer[]{miniMaxA.call(), miniMaxB.call()};
+    }
+  }
 
 }
 

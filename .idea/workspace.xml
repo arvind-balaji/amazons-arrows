@@ -2,18 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="efaa8e78-6ac4-4d8d-b3cb-6de7b87e26de" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/MiniMaxAIClientListenerB.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/MobilityHeuristic.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/MobilityHeuristicB.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/MoveCountHeuristic.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/RandomHeuristic.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/src.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/src.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/AmazonsAndArrows_1.2.3.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/MiniMaxAIClientListenerC.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/MiniMaxAIClientListenerD.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/MinimumDistanceHeuristic.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Node.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/RunMyAIB.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Heuristics.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Heuristic.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MiniMax.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MiniMax.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MiniMaxAIClientListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MiniMaxAIClientListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Heuristic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Heuristic.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MiniMaxAIClientListenerB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MiniMaxAIClientListenerB.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MyAIClientListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MyAIClientListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MyAIClientListenerB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MyAIClientListenerB.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/RunAll.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/RunAll.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/RunMyAI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/RunMyAI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/RunTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/RunTest.java" afterDir="false" />
@@ -31,24 +29,52 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/MiniMaxAIClientListenerB.java">
+        <entry file="file://$PROJECT_DIR$/src/MyAIClientListener.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="60" column="48" selection-start-line="60" selection-start-column="48" selection-end-line="60" selection-end-column="48" />
+            <state relative-caret-position="472">
+              <caret line="39" column="55" selection-start-line="39" selection-start-column="55" selection-end-line="39" selection-end-column="55" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#286#287#0" expanded="true" />
-                <element signature="e#307#308#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/MyAIClientListener.java">
+        <entry file="file://$PROJECT_DIR$/src/MiniMaxAIClientListenerC.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="318">
-              <caret line="34" column="31" selection-start-line="34" selection-start-column="31" selection-end-line="34" selection-end-column="31" />
+            <state relative-caret-position="173">
+              <caret line="41" column="14" lean-forward="true" selection-start-line="41" selection-start-column="14" selection-end-line="41" selection-end-column="14" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/MiniMaxAIClientListenerD.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="328">
+              <caret line="87" column="38" selection-start-line="87" selection-end-line="88" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar:///Library/Java/JavaVirtualMachines/openjdk-11.0.2.jdk/Contents/Home/lib/src.zip!/java.base/java/util/concurrent/FutureTask.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="167">
+              <caret line="190" selection-start-line="190" selection-end-line="190" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/MiniMax.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="300">
+              <caret line="20" column="41" lean-forward="true" selection-start-line="20" selection-start-column="41" selection-end-line="20" selection-end-column="41" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -59,30 +85,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/MyAIClientListenerB.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="276">
-              <caret line="28" column="47" selection-start-line="28" selection-start-column="47" selection-end-line="28" selection-end-column="47" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/RunAll.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="13" selection-start-column="13" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/RandomHeuristic.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" selection-start-line="11" selection-end-line="11" />
-              <folding>
-                <element signature="e#230#231#0" expanded="true" />
-                <element signature="e#273#274#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="166">
+              <caret line="29" column="47" selection-start-line="29" selection-start-column="47" selection-end-line="29" selection-end-column="47" />
             </state>
           </provider>
         </entry>
@@ -90,17 +94,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/RunMyAI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="20" selection-start-line="20" selection-end-line="20" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/MiniMaxAIClientListener.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="41" column="11" selection-start-line="41" selection-start-column="11" selection-end-line="41" selection-end-column="11" />
+            <state relative-caret-position="30">
+              <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -115,15 +110,13 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/MobilityHeuristic.java">
+        <entry file="file://$PROJECT_DIR$/src/MiniMaxAIClientListenerB.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-250">
-              <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+            <state relative-caret-position="294">
+              <caret line="92" column="29" selection-start-line="92" selection-end-line="93" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#332#333#0" expanded="true" />
-                <element signature="e#373#374#0" expanded="true" />
-                <element signature="e#267#268#0" expanded="true" />
+                <element signature="e#297#298#0" expanded="true" />
                 <element signature="e#318#319#0" expanded="true" />
               </folding>
             </state>
@@ -131,10 +124,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/MobilityHeuristicB.java">
+        <entry file="file://$PROJECT_DIR$/src/RunAll.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="133">
-              <caret line="22" column="40" selection-start-line="22" selection-start-column="40" selection-end-line="22" selection-end-column="40" />
+            <state relative-caret-position="285">
+              <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
             </state>
           </provider>
         </entry>
@@ -154,6 +147,7 @@
       <find>1</find>
       <find>this</find>
       <find>rules</find>
+      <find>2147483647</find>
     </findStrings>
     <replaceStrings>
       <replace>player</replace>
@@ -175,7 +169,6 @@
         <option value="$PROJECT_DIR$/src/RunRandomAI.java" />
         <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch.txt" />
         <option value="$PROJECT_DIR$/Useful Methods.txt" />
-        <option value="$PROJECT_DIR$/src/RunMyAI.java" />
         <option value="$PROJECT_DIR$/src/RandomAIClientListener.java" />
         <option value="$PROJECT_DIR$/src/RunServer.java" />
         <option value="$PROJECT_DIR$/src/MinimaxAIClientListener.java" />
@@ -192,22 +185,31 @@
         <option value="$PROJECT_DIR$/src/MoveCountHeuristic.java" />
         <option value="$PROJECT_DIR$/src/RandomHeuristic.java" />
         <option value="$PROJECT_DIR$/src/MobilityHeuristic.java" />
-        <option value="$PROJECT_DIR$/src/Heuristic.java" />
         <option value="$PROJECT_DIR$/src/MiniMax.java" />
-        <option value="$PROJECT_DIR$/src/RunAll.java" />
         <option value="$PROJECT_DIR$/src/MiniMaxAIClientListener.java" />
-        <option value="$PROJECT_DIR$/src/MyAIClientListener.java" />
         <option value="$PROJECT_DIR$/src/MobilityHeuristicB.java" />
         <option value="$PROJECT_DIR$/src/MyAIClientListenerB.java" />
-        <option value="$PROJECT_DIR$/src/RunTest.java" />
+        <option value="$PROJECT_DIR$/src/Heuristic.java" />
+        <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch_2.java" />
+        <option value="$PROJECT_DIR$/src/Node.java" />
+        <option value="$PROJECT_DIR$/src/MinimumDistanceHeuristic.java" />
+        <option value="$PROJECT_DIR$/src/MyAIClientListener.java" />
+        <option value="$PROJECT_DIR$/src/MyAIClientListenerC.java" />
+        <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch_3.java" />
+        <option value="$PROJECT_DIR$/src/RunMyAIB.java" />
+        <option value="$PROJECT_DIR$/src/RunMyAI.java" />
+        <option value="$PROJECT_DIR$/src/RunAll.java" />
+        <option value="$PROJECT_DIR$/src/MiniMaxAIClientListenerC.java" />
         <option value="$PROJECT_DIR$/src/MiniMaxAIClientListenerB.java" />
+        <option value="$PROJECT_DIR$/src/MiniMaxAIClientListenerD.java" />
+        <option value="$PROJECT_DIR$/src/RunTest.java" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="178" />
-    <option name="y" value="36" />
-    <option name="width" value="736" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="229" />
+    <option name="y" value="23" />
+    <option name="width" value="1773" />
     <option name="height" value="877" />
   </component>
   <component name="ProjectLevelVcsManager">
@@ -219,7 +221,6 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -236,10 +237,11 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554989382223" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1555312819919" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="JAVA&#10;TEXT" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
@@ -288,8 +290,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RunServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="RunServer" />
+    <configuration name="RunMyAIB" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="RunMyAIB" />
       <module name="amazons-arrows" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -302,12 +304,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ShortestPath" type="Java Scratch" factoryName="Java Scratch" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ShortestPath" />
+      <option name="SCRATCH_FILE_URL" value="file://$APPLICATION_CONFIG_DIR$/scratches/scratch_2.java" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.RunTest" />
         <item itemvalue="Application.RunAll" />
         <item itemvalue="Application.RunMyAI" />
-        <item itemvalue="Application.RunServer" />
+        <item itemvalue="Application.RunMyAIB" />
+        <item itemvalue="Java Scratch.ShortestPath" />
       </list>
     </recent_temporary>
   </component>
@@ -357,7 +367,14 @@
       <option name="project" value="LOCAL" />
       <updated>1554128254912</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Improve MiniMax">
+      <created>1554991401500</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1554991401500</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TodoView">
@@ -370,10 +387,9 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="178" y="36" width="736" height="877" extended-state="0" />
-    <editor active="true" />
+    <frame x="229" y="23" width="1773" height="877" extended-state="0" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.3299712" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21374927" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.24973376" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -382,14 +398,14 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49928367" weight="0.32866243" />
-      <window_info anchor="bottom" x="1044" y="45" width="330" height="716" id="Run" order="2" sideWeight="0.495702" type="WINDOWED" visible="true" weight="0.32866243" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49713466" weight="0.4" />
+      <window_info anchor="bottom" x="649" y="45" width="791" height="855" id="Run" order="2" sideWeight="0.495702" weight="0.32866243" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49713466" weight="0.40509555" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49928367" weight="0.32866243" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.3299363" />
       <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.504298" side_tool="true" weight="0.28535032" />
-      <window_info anchor="bottom" id="Version Control" order="9" />
+      <window_info anchor="bottom" id="Version Control" order="9" weight="0.03821656" />
       <window_info anchor="bottom" id="Messages" order="10" sideWeight="0.49856734" weight="0.32738853" />
       <window_info anchor="bottom" id="Run with VisualVM" order="11" weight="0.3299363" />
       <window_info anchor="bottom" id="Debug with VisualVM" order="12" />
@@ -403,61 +419,26 @@
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="right" id="Coverage" order="8" side_tool="true" visible="true" weight="0.3295129" />
     </layout>
-    <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.12589413" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.24973376" />
-      <window_info id="Image Layers" order="2" />
-      <window_info id="Designer" order="3" />
-      <window_info id="UI Designer" order="4" />
-      <window_info id="Capture Tool" order="5" />
-      <window_info id="Favorites" order="6" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49928367" weight="0.32866243" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.495702" visible="true" weight="0.32866243" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49713466" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49928367" weight="0.32866243" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.3299363" />
-      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.504298" side_tool="true" weight="0.28535032" />
-      <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Messages" order="10" sideWeight="0.49856734" weight="0.32738853" />
-      <window_info anchor="bottom" id="Run with VisualVM" order="11" weight="0.3299363" />
-      <window_info anchor="bottom" id="Debug with VisualVM" order="12" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="right" id="Maven" order="4" />
-      <window_info anchor="right" id="Theme Preview" order="5" />
-      <window_info anchor="right" id="Capture Analysis" order="6" />
-      <window_info anchor="right" id="Palette&#9;" order="7" />
-      <window_info anchor="right" id="Coverage" order="8" side_tool="true" visible="true" weight="0.3295129" />
-    </layout-to-restore>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Implement AI&#10;&#10; - max number of moves heuristic" />
     <MESSAGE value="Refactor Move Class&#10;&#10; - added PotentialMove Class&#10; - score normalization&#10; - score weighting" />
     <MESSAGE value="Add scoring methods&#10;&#10; - Arrow proximity heuristic&#10; - Player proximity heuristic" />
     <MESSAGE value="Improve AI&#10;&#10;- Mobilty Score" />
-    <option name="LAST_COMMIT_MESSAGE" value="Improve AI&#10;&#10;- Mobilty Score" />
+    <MESSAGE value="Improve MiniMax" />
+    <option name="LAST_COMMIT_MESSAGE" value="Improve MiniMax" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <default-breakpoints>
-        <breakpoint enabled="true" type="java-exception">
+        <breakpoint type="java-exception">
           <properties>
             <option name="NOTIFY_CAUGHT" value="false" />
           </properties>
         </breakpoint>
       </default-breakpoints>
     </breakpoint-manager>
-    <watches-manager>
-      <configuration name="Application">
-        <watch expression="depth" language="JAVA" />
-      </configuration>
-    </watches-manager>
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="breakpointCondition">
@@ -521,6 +502,41 @@
     </expressions>
     <expressions id="evaluateExpression">
       <expression>
+        <expression-string>score</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>evaluation</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>resultList.get(i).get()</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>resultList.get(i)</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>i</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>resultList</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>parent</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
         <expression-string>10/((double)(Math.abs(dy)+1)*(Math.abs(dx)+1))</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
@@ -530,121 +546,9 @@
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
-      <expression>
-        <expression-string>(double)(Math.abs(dy)+1)*(Math.abs(dx)+1)</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>10/(double)(Math.abs(dy)+1)*(Math.abs(dx)+1)</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>dy</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>dx</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>rulesCopy.canMove(piece.x, piece.y, piece.x + dx, piece.y + dy)</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>rulesCopy.canMove(piece.x, piece.y, piece.x + dx, piece.y + dy))</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>state.getPieces(player)</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar:///Library/Java/JavaVirtualMachines/openjdk-11.0.2.jdk/Contents/Home/lib/src.zip!/java.desktop/javax/imageio/ImageIO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18375">
-          <caret line="1321" column="7" selection-start-line="1321" selection-start-column="7" selection-end-line="1321" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/src/AmazonsAndArrows_1.2.1.jar!/AmazonsGame.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1133">
-          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/openjdk-11.0.2.jdk/Contents/Home/lib/src.zip!/java.base/java/util/Collections.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="141" column="57" selection-start-line="141" selection-start-column="57" selection-end-line="141" selection-end-column="57" />
-          <folding>
-            <element signature="e#6694#6695#0" expanded="true" />
-            <element signature="e#6725#6726#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="20" selection-start-line="20" selection-start-column="20" selection-end-line="20" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/img/grid.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/src/AmazonsAndArrows_1.2.1.jar!/AmazonsState.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1350">
-          <caret line="115" column="3" selection-start-line="101" selection-start-column="2" selection-end-line="115" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Useful Methods.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="12" selection-start-line="8" selection-start-column="12" selection-end-line="8" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/RunRandomAI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="5" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/openjdk-11.0.2.jdk/Contents/Home/lib/src.zip!/java.base/java/lang/Override.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="355">
-          <caret line="52" column="18" selection-start-line="52" selection-start-column="18" selection-end-line="52" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/src/netgame_1.1.jar!/netgame/client/Client.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="463">
-          <caret line="46" column="14" selection-start-line="46" selection-start-column="14" selection-end-line="46" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/src/AmazonsAndArrows_1.2.1.jar!/AmazonsRules.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1560">
-          <caret line="118" column="17" selection-start-line="118" selection-start-column="17" selection-end-line="118" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$PROJECT_DIR$/src/AmazonsAndArrows_1.2.1.jar!/AmazonsServer.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -656,13 +560,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="15" column="22" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/RunServer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="27" selection-start-column="27" selection-end-column="27" />
         </state>
       </provider>
     </entry>
@@ -695,13 +592,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ParallellTasks.java" />
-    <entry file="file://$PROJECT_DIR$/src/MiniMaxThreadedAIClientListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="19" column="24" selection-start-line="19" selection-start-column="24" selection-end-line="19" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch_1.txt">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -709,28 +599,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret selection-end-line="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Move.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="251">
-          <caret line="32" column="17" lean-forward="true" selection-start-line="32" selection-start-column="17" selection-end-line="32" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#591#592#0" expanded="true" />
-            <element signature="e#621#622#0" expanded="true" />
-            <element signature="e#798#799#0" expanded="true" />
-            <element signature="e#825#826#0" expanded="true" />
-            <element signature="e#937#938#0" expanded="true" />
-            <element signature="e#973#974#0" expanded="true" />
-            <element signature="e#1012#1013#0" expanded="true" />
-            <element signature="e#1035#1036#0" expanded="true" />
-            <element signature="e#1082#1083#0" expanded="true" />
-            <element signature="e#1117#1118#0" expanded="true" />
-            <element signature="e#1424#1425#0" expanded="true" />
-            <element signature="e#1487#1488#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -825,54 +693,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/PotentialMoves.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="24" column="27" selection-start-line="24" selection-start-column="27" selection-end-line="24" selection-end-column="27" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/MoveCountHeuristic.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
           <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Heuristic.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="358">
-          <caret line="24" selection-start-line="24" selection-end-line="24" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#657#658#0" expanded="true" />
-            <element signature="e#685#686#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/RandomAIClientListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="23" column="17" lean-forward="true" selection-start-line="23" selection-start-column="17" selection-end-line="23" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#246#247#0" expanded="true" />
-            <element signature="e#267#268#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MiniMax.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="20" column="45" selection-start-line="20" selection-start-column="45" selection-end-line="20" selection-end-column="45" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -890,16 +714,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/MyAIClientListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="318">
-          <caret line="34" column="31" selection-start-line="34" selection-start-column="31" selection-end-line="34" selection-end-column="31" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar:///Library/Java/JavaVirtualMachines/openjdk-11.0.2.jdk/Contents/Home/lib/src.zip!/java.base/java/lang/Integer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="898">
@@ -907,64 +721,245 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch_2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1065">
+          <caret line="71" column="5" selection-start-line="71" selection-start-column="5" selection-end-line="71" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/src/AmazonsAndArrows_1.2.3.jar!/AmazonsState.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1380">
+          <caret line="117" column="16" selection-start-line="117" selection-start-column="16" selection-end-line="117" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Node.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="33" selection-start-line="33" selection-end-line="33" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#217#218#0" expanded="true" />
+            <element signature="e#243#244#0" expanded="true" />
+            <element signature="e#376#377#0" expanded="true" />
+            <element signature="e#401#402#0" expanded="true" />
+            <element signature="e#761#762#0" expanded="true" />
+            <element signature="e#787#788#0" expanded="true" />
+            <element signature="e#820#821#0" expanded="true" />
+            <element signature="e#846#847#0" expanded="true" />
+            <element signature="e#875#876#0" expanded="true" />
+            <element signature="e#913#914#0" expanded="true" />
+            <element signature="e#942#943#0" expanded="true" />
+            <element signature="e#984#985#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Heuristic.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="870">
+          <caret line="62" column="15" selection-start-line="62" selection-start-column="15" selection-end-line="62" selection-end-column="15" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#658#659#0" expanded="true" />
+            <element signature="e#696#697#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/RandomAIClientListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="23" column="17" selection-start-line="23" selection-start-column="17" selection-end-line="23" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#246#247#0" expanded="true" />
+            <element signature="e#267#268#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/MobilityHeuristic.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-250">
+        <state relative-caret-position="30">
           <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#332#333#0" expanded="true" />
             <element signature="e#373#374#0" expanded="true" />
-            <element signature="e#267#268#0" expanded="true" />
-            <element signature="e#318#319#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/MobilityHeuristicB.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
+        <state relative-caret-position="270">
           <caret line="22" column="40" selection-start-line="22" selection-start-column="40" selection-end-line="22" selection-end-column="40" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/MiniMaxAIClientListener.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="41" column="11" selection-start-line="41" selection-start-column="11" selection-end-line="41" selection-end-column="11" />
+        <state relative-caret-position="23">
+          <caret line="31" column="29" lean-forward="true" selection-start-line="31" selection-start-column="29" selection-end-line="31" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MinimumDistanceHeuristic.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="141">
+          <caret line="40" selection-start-line="40" selection-end-line="40" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/src/AmazonsAndArrows_1.2.3.jar!/GUIListener.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="16" column="9" selection-start-line="16" selection-start-column="9" selection-end-line="16" selection-end-column="9" />
+          <folding>
+            <element signature="e#371#372#0" expanded="true" />
+            <element signature="e#388#389#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MyAIClientListenerC.java" />
+    <entry file="file://$PROJECT_DIR$/src/MiniMaxThreadedAIClientListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="19" column="24" selection-start-line="19" selection-start-column="24" selection-end-line="19" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch_3.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="25" column="29" selection-start-line="24" selection-start-column="6" selection-end-line="25" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/RunServer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/RunMyAIB.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="1" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PotentialMoves.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="5" column="15" lean-forward="true" selection-start-line="5" selection-start-column="15" selection-end-line="5" selection-end-column="15" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#183#184#0" expanded="true" />
+            <element signature="e#211#212#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Move.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-279">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#591#592#0" expanded="true" />
+            <element signature="e#621#622#0" expanded="true" />
+            <element signature="e#798#799#0" expanded="true" />
+            <element signature="e#830#831#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/openjdk-11.0.2.jdk/Contents/Home/lib/src.zip!/java.base/java/util/concurrent/FutureTask.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="167">
+          <caret line="190" selection-start-line="190" selection-end-line="190" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/RunAll.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="13" selection-start-column="13" selection-end-column="13" />
+        <state relative-caret-position="285">
+          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/RunMyAI.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" selection-start-line="20" selection-end-line="20" />
+        <state relative-caret-position="30">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/MyAIClientListenerB.java">
+    <entry file="file://$PROJECT_DIR$/src/MiniMax.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="28" column="47" selection-start-line="28" selection-start-column="47" selection-end-line="28" selection-end-column="47" />
+        <state relative-caret-position="300">
+          <caret line="20" column="41" lean-forward="true" selection-start-line="20" selection-start-column="41" selection-end-line="20" selection-end-column="41" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MyAIClientListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="472">
+          <caret line="39" column="55" selection-start-line="39" selection-start-column="55" selection-end-line="39" selection-end-column="55" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/MiniMaxAIClientListenerB.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="60" column="48" selection-start-line="60" selection-start-column="48" selection-end-line="60" selection-end-column="48" />
+        <state relative-caret-position="294">
+          <caret line="92" column="29" selection-start-line="92" selection-end-line="93" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#286#287#0" expanded="true" />
-            <element signature="e#307#308#0" expanded="true" />
+            <element signature="e#297#298#0" expanded="true" />
+            <element signature="e#318#319#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MyAIClientListenerB.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="166">
+          <caret line="29" column="47" selection-start-line="29" selection-start-column="47" selection-end-line="29" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MiniMaxAIClientListenerC.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="173">
+          <caret line="41" column="14" lean-forward="true" selection-start-line="41" selection-start-column="14" selection-end-line="41" selection-end-column="14" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MiniMaxAIClientListenerD.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="328">
+          <caret line="87" column="38" selection-start-line="87" selection-end-line="88" />
         </state>
       </provider>
     </entry>
