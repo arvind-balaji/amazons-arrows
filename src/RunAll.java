@@ -1,3 +1,5 @@
+import java.util.Random;
+
 public class RunAll {
 
   public static void main(String[] args) {
@@ -7,10 +9,10 @@ public class RunAll {
     AmazonsClient clientA = new AmazonsClient();
     AmazonsClient clientB = new AmazonsClient();
 
-    clientA.registerListener(new MiniMaxAIClientListenerB("MiniMax C"));
+    clientA.registerListener(new MiniMaxAIClientListenerC("AI C"));
     clientA.registerListener(new GUIListener());
 
-    clientB.registerListener(new MyAIClientListener("AI A"));
+    clientB.registerListener(new MiniMaxAIClientListenerC("AI D"));
 
     clientA.connect(port);
     clientB.connect(port);

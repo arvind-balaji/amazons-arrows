@@ -25,23 +25,26 @@ public class MiniMaxAIClientListenerD extends AIClientListener {
     Heuristic mobilityHeuristic;
     Heuristic moveCountHeuristic;
     Heuristic randomHeuristic;
+    Heuristic minDisHeuristic;
 
     PotentialMoves moves = new PotentialMoves(getMoves(rules, this.getMyPlayerNumber()));
     int size = moves.getMoves().size();
 
     for (Move move : moves.getMoves()) {
       randomHeuristic = new RandomHeuristic(rules, move, player, oppPlayer);
+      minDisHeuristic = new MinimumDistanceHeuristic(rules, move, player, oppPlayer);
       mobilityHeuristic = new MobilityHeuristicB(rules, move, player, oppPlayer);
       moveCountHeuristic = new MoveCountHeuristic(rules, move, player, oppPlayer);
       move.addScores(
               randomHeuristic.evaluate(),
+              minDisHeuristic.evaluate(),
               mobilityHeuristic.evaluate(),
               moveCountHeuristic.evaluate()
       );
     }
     moves.normalize(.25, 1, 1, 1);
 
-    PotentialMoves bestMoves = new PotentialMoves(moves.getBestMoves(5));
+    PotentialMoves bestMoves = new PotentialMoves(moves.getBestMoves(10));
     bestMoves.removeScores();
 
     System.out.print("\n" + "Move " + moveCount + "\n");
@@ -85,8 +88,9 @@ public class MiniMaxAIClientListenerD extends AIClientListener {
       wins++;
     }
     double winRate = ((double) wins / (double) plays) * 100;
-//    System.out.println(new DecimalFormat("##.##").format(winRate) + "%");
-//    System.out.println("Game: " + plays);
+    System.out.println("Game " + plays);
+    System.out.println(new DecimalFormat("##.##").format(winRate) + "%");
+
   }
 
 
@@ -150,9 +154,10 @@ public class MiniMaxAIClientListenerD extends AIClientListener {
       }
       Heuristic mobilityHeuristic = new MobilityHeuristicB(rules, move, player, oppPlayer);
       Heuristic moveCountHeuristic = new MoveCountHeuristic(rules, move, player, oppPlayer);
+      Heuristic minDisHeuristic = new MinimumDistanceHeuristic(rules, move, player, oppPlayer);
       MiniMax miniMaxA = new MiniMax(rules, move, mobilityHeuristic, player, oppPlayer, depthA);
       MiniMax miniMaxB = new MiniMax(rules, move, moveCountHeuristic, player, oppPlayer, depthB);
-      return new Integer[]{miniMaxA.call(), miniMaxB.call()};
+      return new Integer[]{miniMaxA.call(), miniMaxB.call(), minDisHeuristic.evaluate()};
     }
   }
 

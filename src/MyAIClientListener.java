@@ -20,6 +20,7 @@ public class MyAIClientListener extends AIClientListener {
     Heuristic mobilityHeuristic;
     Heuristic moveCountHeuristic;
     Heuristic randomHeuristic;
+    Heuristic minimumDistanceHeuristic;
 
     PotentialMoves moves = new PotentialMoves(getMoves(rules, this.getMyPlayerNumber()));
     int size = moves.getMoves().size();
@@ -28,13 +29,15 @@ public class MyAIClientListener extends AIClientListener {
       randomHeuristic = new RandomHeuristic(rules, move, player, oppPlayer);
       mobilityHeuristic = new MobilityHeuristic(rules, move, player, oppPlayer);
       moveCountHeuristic = new MoveCountHeuristic(rules, move, player, oppPlayer);
+      minimumDistanceHeuristic = new MinimumDistanceHeuristic(rules, move, player, oppPlayer);
+//      System.out.println(minimumDistanceHeuristic.evaluate());
       move.addScores(
-              randomHeuristic.evaluate(),
-              mobilityHeuristic.evaluate(),
+              minimumDistanceHeuristic.evaluate(),
+//              mobilityHeuristic.evaluate(),
               moveCountHeuristic.evaluate()
       );
     }
-    moves.normalize(.25, 1, 1, 1);
+    moves.normalize(1, 1, 1, 1);
 
 //    System.out.println(bestMoves);
 //    System.out.println(potentialMoves.getBestMove());

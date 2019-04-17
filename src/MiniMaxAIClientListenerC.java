@@ -41,7 +41,7 @@ public class MiniMaxAIClientListenerC extends AIClientListener {
     }
     moves.normalize(.25, 1, 1, 1);
 
-    PotentialMoves bestMoves = new PotentialMoves(moves.getBestMoves(25));
+    PotentialMoves bestMoves = new PotentialMoves(moves.getBestMoves(10));
     bestMoves.removeScores();
 
     System.out.print("\n" + "Move " + moveCount + "\n");
@@ -85,8 +85,8 @@ public class MiniMaxAIClientListenerC extends AIClientListener {
       wins++;
     }
     double winRate = ((double) wins / (double) plays) * 100;
-    System.out.println(new DecimalFormat("##.##").format(winRate) + "%");
-    System.out.println("Game: " + plays);
+//    System.out.println(new DecimalFormat("##.##").format(winRate) + "%");
+//    System.out.println("Game: " + plays);
   }
 
 
